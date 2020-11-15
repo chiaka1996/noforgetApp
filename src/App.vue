@@ -227,6 +227,9 @@ h2{
     font-size: 13px;
   }
   .links:hover {
+    color:  #33C7FF;
+    cursor: pointer;
+    font-size: 13px;
     background-color: white;
   }
   }

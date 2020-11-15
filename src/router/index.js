@@ -7,6 +7,7 @@ import Dashboard from '../views/Dashboard.vue'
 import Profile from '../views/Profile.vue'
 import ChangePassword from '../views/ChangePassword.vue'
 import ForgotPassword from '../views/ForgotPassword.vue'
+import errorPage from '../views/ErrorPage.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/*',
+    name: 'error',
+    component: errorPage
   },
   {
     path: '/profile',

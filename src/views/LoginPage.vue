@@ -18,7 +18,7 @@
     <div id="password_input">
     <label for="password">Password</label><br>
     <input type="password" v-model='login_details.password' placeholder="password" id="password">
-    <div class="forgot_password"><span @click=" this.$router.push('/forgotpassword')" to="/forgotpassword" id="forgot">Forgot Password ?</span> </div>
+    <div class="forgot_password"><span @click="forgotpasswword_link" to="/forgotpassword" id="forgot">Forgot Password ?</span> </div>
     </div>
 
     <button class="login_btn" @click="login_user">login</button>
@@ -26,11 +26,11 @@
     </form>
 
     <div class="register_account">
-      <p>don't have an account ? <span @click="this.$router.push('/signup')" id="register">Register</span> </p>
+      <p>don't have an account ? <span @click="sigunp_link" id="register">Register</span> </p>
     </div>
     </div>
     <div v-if="loggedIn">
-      you are already logged in. proceed to your <span @click="this.$router.push('/dashboard')">dashboard</span>
+      you are already logged in. proceed to your <span @click="dashboard_link">dashboard</span>
     </div>
   </div>
 </template>
@@ -67,6 +67,14 @@ export default {
 
     profile_link () {
        this.$router.push('/profile')
+    },
+
+    forgotpasswword_link () {
+        this.$router.push('/forgotpassword')
+    },
+
+    sigunp_link () {
+       this.$router.push('/signup')
     },
 
     login_user (e) {
