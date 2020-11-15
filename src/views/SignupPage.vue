@@ -37,7 +37,7 @@
     </div>
     </div>
     <div v-if="loggedIn">
-      you are already logged, proceed to your <router-link to="/dashboard">Dashboard</router-link>
+      you are already logged, proceed to your <span @click=" this.$router.push('/dashboard')">Dashboard</span>
     </div>
     </div>
 </template>

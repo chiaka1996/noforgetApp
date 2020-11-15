@@ -11,9 +11,9 @@
           <span v-if="loggedIn" id="userName">{{userProfile.username}}</span>
 
            <div class="dropdown-content">
-              <div><router-link to="/dashboard" class="links">Dashboard</router-link></div>
-              <div><router-link to="/profile" class="links">Profile</router-link></div>
-              <div><router-link to="/changepassword" class="links">Change Password</router-link></div>
+              <div class="links" @click="dashboard_link">Dashboard</div>
+              <div class="links" @click="profile_link">Profile</div>
+              <div class="links" @click="changepassword_link">Change Password</div>
                <div class="links" v-on:click="logout">Log out</div>
               
             </div>
@@ -44,6 +44,18 @@ import { mapActions } from 'vuex'
       ...mapActions([ 
        'addUserProfile', 'checkUserLogin'
      ]),
+
+     dashboard_link () {
+        this.$router.push('/dashboard')
+     },
+
+    profile_link () {
+       this.$router.push('/profile')
+    },
+
+    changepassword_link () {
+      this.$router.push('/changepassword')
+    },
 
      logout () {
        localStorage.clear()
@@ -142,6 +154,9 @@ h2{
     cursor: pointer;
     font-size: 13px;
   }
+  .links:hover {
+    background-color: white;
+  }
 
   //for ipad
    @media only screen and (min-width: 710px) and (max-width: 1030px) {
@@ -204,6 +219,15 @@ h2{
     font-size: 30px;
     font-weight: bold;
     font-family: 'Fredoka One';
+  }
+
+    .links {
+    color:  #33C7FF;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  .links:hover {
+    background-color: white;
   }
   }
 
