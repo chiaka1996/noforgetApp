@@ -196,6 +196,15 @@ h2{
       margin-top: 2%;
     }  
   }
+
+  
+h2{
+    color: white;
+    margin-left: 5%;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Fredoka One';
+  }
   }
 
 </style>
