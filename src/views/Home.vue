@@ -44,6 +44,7 @@ export default {
 <style lang="scss" scoped>
 .home {
   margin-top: 10%;
+  margin-bottom: 5%;
 }
 
   #homepage_image{
@@ -63,7 +64,6 @@ export default {
     font-size: 13px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 10%;
   }
 
   .home-buttons {
