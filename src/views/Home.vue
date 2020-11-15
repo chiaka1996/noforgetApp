@@ -63,7 +63,7 @@ export default {
     font-size: 13px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 4%;
+    margin-bottom: 10%;
   }
 
   .home-buttons {
