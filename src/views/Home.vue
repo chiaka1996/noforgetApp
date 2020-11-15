@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  margin-top: 30%;
+  margin-top: 10%;
 }
 
   #homepage_image{
