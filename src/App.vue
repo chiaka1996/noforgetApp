@@ -144,7 +144,7 @@ h2{
   }
 
   //for ipad
-   @media only screen and (min-width: 710px) {
+   @media only screen and (min-width: 710px) and (max-width: 1030px) {
 
       #nav_container {
     display: flex;
@@ -176,7 +176,7 @@ h2{
 }
 
   //for desktop view
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 1031px) {
 
     #nav_container {
     display: flex;
