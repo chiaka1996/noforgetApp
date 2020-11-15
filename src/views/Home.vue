@@ -63,6 +63,7 @@ export default {
     font-size: 13px;
     font-weight: bold;
     text-align: center;
+    margin-bottom: 4%;
   }
 
   .home-buttons {
@@ -125,6 +126,7 @@ export default {
     font-size: 22px;
     font-weight: bold;
     text-align: center;
+    margin-bottom: 0;
   }
 
     .home_login_btn {
