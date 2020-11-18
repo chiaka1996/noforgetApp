@@ -21,12 +21,14 @@
     <div class="forgot_password"><span @click="forgotpasswword_link" to="/forgotpassword" id="forgot">Forgot Password ?</span> </div>
     </div>
 
-    <button class="login_btn" @click="login_user">login</button>
+    <button :class="!btn_clicked ? 'login_btn':'disable_btn'" @click="login_user">{{login_status}}</button>
+   
+
 
     </form>
 
     <div class="register_account">
-      <p>don't have an account ? <span @click="sigunp_link" id="register">Register</span> </p>
+      <p>don't have an account ? <router-link to="/signup" id="register">register</router-link> </p>
     </div>
     </div>
     <div v-if="loggedIn">
@@ -48,9 +50,23 @@ export default {
         password: ''
       },
       error_message: [],
-      success_message: ''
+      success_message: '',
+      btn_clicked: false,
+      login_status: 'Login'
     }
   },
+
+  mounted() {
+    this.btn_clicked = false
+    this.login_status = 'Login'
+    
+  },
+
+  // watch: {
+  //   error_message: (val) => {
+  //     this.login_status = val
+  //   }
+  // },
 
   computed: {
      ...mapState([ 'userProfile', 'loggedIn'])
@@ -79,6 +95,8 @@ export default {
 
     login_user (e) {
       e.preventDefault()
+      this.login_status = "Loading..."
+      this.btn_clicked = true
       this.error_message = []
       const { password } = this.login_details
       if (password.length < 7) {
@@ -89,8 +107,10 @@ export default {
         axios.post('https://noforgetappbackend.herokuapp.com/apis/userLogin', this.login_details)
           .then(
             (res) => {
-              console.log(res)
+              
               if (res.status === 201) {
+                this.btn_clicked = false
+                this.login_status = "Login"
                 this.error_message.push(res.data.message)
               }
 
@@ -172,6 +192,20 @@ label {
   cursor: pointer;
 }
 
+.disable_btn {
+  width: 40%;
+  height: 35px;
+  font-size: 20px;
+  border: 3px solid lightgray;
+  background-color: #33C7FF;;
+  color: white;
+  border-radius: 10px;
+  margin-left: 2%;
+  font-family: 'Fredoka One';
+   cursor: not-allowed;
+  pointer-events: none;
+}
+
 .register_account {
   color: grey;
   margin-left: 2%;
@@ -180,6 +214,7 @@ label {
 #register {
   color: #33C7FF;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .forgot_password {

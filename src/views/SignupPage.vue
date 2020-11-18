@@ -30,7 +30,7 @@
     <input type="password" v-model="confirmPassword" id="confirm_password" placeholder="chi@yahoo.com" required>
     </div>
 
-    <button type="submit" class="register_btn" v-on:click="register_user">Register</button>
+    <button type="submit" :class='!btn_clicked ? "register_btn" : "disable_btn"' v-on:click="register_user">{{register_status}}</button>
     </form>
     <div class="login_account">
       <p>already have an account ? <router-link to="/login" id="login">Login</router-link> </p>
@@ -68,7 +68,9 @@ export default {
       usernameBoolean: 'chiboy',
       email_boolean: false,
       password_boolean: false,
-      confirm_password_boolean: false
+      confirm_password_boolean: false,
+      btn_clicked: false,
+      register_status: 'Register'
     }
   },
 
@@ -84,6 +86,8 @@ export default {
 
     register_user (e) {
       e.preventDefault()
+      this.btn_clicked = true
+      this.register_status = "Loading..."
       this.error_message = []
       const { username, password, email } = this.signup_details
       const userRegex = /[a-z]+[0-9]*/gi
@@ -123,6 +127,8 @@ export default {
               }
 
               else {
+                this.btn_clicked = false
+                this.register_status = "Register"
                 this.error_message = [...response.data.errorArray]
               }
             }
@@ -195,6 +201,20 @@ label {
   margin-left: 2%;
   font-family: 'Fredoka One';
   cursor: pointer;
+}
+
+.disable_btn {
+  width: 40%;
+  height: 35px;
+  font-size: 20px;
+  border: 3px solid lightgray;
+  background-color: #33C7FF;;
+  color: white;
+  border-radius: 10px;
+  margin-left: 2%;
+  font-family: 'Fredoka One';
+   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .login_account {
