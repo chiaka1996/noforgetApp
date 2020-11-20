@@ -93,18 +93,26 @@ export default {
       const userRegex = /[a-z]+[0-9]*/gi
 
       if (!username || !password || !this.confirmPassword || !email) {
+         this.btn_clicked = false
+         this.register_status = "Register"
         return this.error_message.push('please fill all fileds')
       }
 
       if (!userRegex.test(username) || username.length < 3 || username.length > 7) {
+         this.btn_clicked = false
+         this.register_status = "Register"
         this.error_message.push('username should start with a letter, contain only letters and numbers, be between 3 & 7 characters')
       }
 
       if (password.length < 7) {
+         this.btn_clicked = false
+         this.register_status = "Register"
         this.error_message.push('password should be more than 7')
       }
 
       if (this.confirmPassword < 7 || this.confirmPassword !== password) {
+         this.btn_clicked = false
+        this.register_status = "Register"
         this.error_message.push('password and confirm password do not match')
       }
 
