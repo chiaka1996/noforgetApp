@@ -265,7 +265,7 @@ import axios from 'axios'
 <style lang='scss' scoped>
 
 #dashboard{
-  margin-top: 25%;
+  margin-top: 18%;
   
 }
 

@@ -132,7 +132,7 @@ export default {
 <style lang="scss" scoped>
 
 #login_page{
-  margin-top: 50%;
+  margin-top: 20%;
    font-family: 'Fredoka One';
    margin-left: 0;
    margin-right: 0;
@@ -229,6 +229,13 @@ label {
 }
 
  @media only screen and (min-width: 720px) and (max-width: 1099px) {
+
+   #login_page{
+  margin-top: 45%;
+   font-family: 'Fredoka One';
+   margin-left: 0;
+   margin-right: 0;
+}
    input{
   width: 93%;
   height: 70px;

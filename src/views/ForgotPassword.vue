@@ -4,7 +4,7 @@
         <div class="successMessage">{{successMessage}}</div>
         <div class="errorMessage">{{errorMessage}}</div>
         <form class="form1">
-        <div class="label">email</div>
+        <div class="label">Enter Email</div>
         <input v-model="dataList.email" type="email" required />
 
         <button @click=" onsubmitEmail" >submit</button>
