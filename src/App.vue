@@ -3,14 +3,14 @@
     <b-navbar toggleable id="nav_container" >
     <b-navbar-brand><router-link to="/" id="loggo"><h2>noForget</h2></router-link></b-navbar-brand>
 
-    <b-navbar-toggle target="navbar-toggle-collapse">
+    <b-navbar-toggle target="navbar-toggle-collapse" v-if="loggedIn">
          <template id="userTemplate">
         <font-awesome-icon id="user_icon" v-if="loggedIn" :icon="['fas', 'user-circle']" size='2x' />
         <span v-if="loggedIn" id="userName">{{userProfile.username}}</span>
       </template>
     </b-navbar-toggle>
 
-    <b-collapse id="navbar-toggle-collapse" is-nav>
+    <b-collapse id="navbar-toggle-collapse" is-nav v-if="loggedIn">
       <b-navbar-nav class="ml-auto">
         <b-nav-item class="links" @click="dashboard_link">Dashboard</b-nav-item>
         <b-nav-item class="links" @click="profile_link">Profile</b-nav-item>
