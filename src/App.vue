@@ -1,26 +1,24 @@
   <template>
   <div id="main_app">
-    <nav>
-      <div id="nav_container">
-      <router-link to="/" id="loggo"><h2>noForget</h2></router-link>
-      
-      <div id='flex_1'></div>
-       <!-- <h1 id='user_icon'> -->
-         <div class="dropdown">
-         <font-awesome-icon id="user_icon" v-if="loggedIn" :icon="['fas', 'user-circle']" size='2x' />
-          <span v-if="loggedIn" id="userName">{{userProfile.username}}</span>
+    <b-navbar toggleable id="nav_container" >
+    <b-navbar-brand><router-link to="/" id="loggo"><h2>noForget</h2></router-link></b-navbar-brand>
 
-           <div class="dropdown-content">
-              <div class="links" @click="dashboard_link">Dashboard</div>
-              <div class="links" @click="profile_link">Profile</div>
-              <div class="links" @click="changepassword_link">Change Password</div>
-               <div class="links" v-on:click="logout">Log out</div>
-              
-            </div>
-          </div>
-        <!-- </h1> -->
-        </div>
-    </nav>
+    <b-navbar-toggle target="navbar-toggle-collapse">
+         <template id="userTemplate">
+        <font-awesome-icon id="user_icon" v-if="loggedIn" :icon="['fas', 'user-circle']" size='2x' />
+        <span v-if="loggedIn" id="userName">{{userProfile.username}}</span>
+      </template>
+    </b-navbar-toggle>
+
+    <b-collapse id="navbar-toggle-collapse" is-nav>
+      <b-navbar-nav class="ml-auto">
+        <b-nav-item class="links" @click="dashboard_link">Dashboard</b-nav-item>
+        <b-nav-item class="links" @click="profile_link">Profile</b-nav-item>
+        <b-nav-item class="links" @click="changepassword_link">Change Password</b-nav-item>
+        <b-nav-item class="links" @click="logout">Log out</b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
     <router-view/>
   </div>
   </template>
@@ -78,37 +76,12 @@ import { mapActions } from 'vuex'
   margin-top: 0;
 }
 
-#flex_1 {
-  flex: 1
-}
-
-#userName {
-  font-family: 'Fredoka One';
-  font-size: 15px;
-}
-
-h2{
-    color: white;
-    margin-left: 5%;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: 'Fredoka One';
-  }
-
-  nav{
-    background-color: #33C7FF;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 12%;
-  }
-
-  #nav_container {
+#nav_container {
     display: flex;
     background-color:  #33C7FF;
     width: 100%;
     height: 100%;
-    padding-top: 8%;
+    padding-top: 2%;
     padding-left: 2%;
     padding-right: 5%;
 
@@ -122,37 +95,33 @@ h2{
     }  
   }
 
+#flex_1 {
+  flex: 1
+}
+
+#userName {
+  font-family: 'Fredoka One';
+  color: white;
+  font-size: 15px;
+}
+
+h2{
+    color: white;
+    margin-left: 5%;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Fredoka One';
+  }
+
   #loggo {
     text-decoration: none;
-  }
-
-  .dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-  .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  color:  #33C7FF;
-  font-family: 'Fredoka One';
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-  }
-
-  .dropdown:active .dropdown-content {
-  display: block;
   }
 
   .links {
     color:  #33C7FF;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 15px;
+    font-family: 'Fredoka One';
   }
   .links:hover {
     background-color: white;
@@ -224,12 +193,9 @@ h2{
     .links {
     color:  #33C7FF;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 15px;
   }
   .links:hover {
-    color:  #33C7FF;
-    cursor: pointer;
-    font-size: 13px;
     background-color: white;
   }
   }

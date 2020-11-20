@@ -265,7 +265,7 @@ import axios from 'axios'
 <style lang='scss' scoped>
 
 #dashboard{
-  margin-top: 18%;
+  margin-top: 11%;
   
 }
 
@@ -408,7 +408,7 @@ form {
 //desktop view 
  @media only screen and (min-width: 1030px) {
      #dashboard {
-      margin-top: 7%;
+      margin-top: 2%;
       padding-left: 15%;
       padding-right: 15%;
   
