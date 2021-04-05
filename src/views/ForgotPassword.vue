@@ -48,12 +48,12 @@ import axios from 'axios'
             e.preventDefault()
             const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gi;
 
-             if (!emailRegex.test(email)) {
+             if (!emailRegex.test(this.dataList.email)) {
                 this.errorMessage = 'please input the correct email'
                  }
 
                  else{
-
+                     console.log(this.dataList);
             axios.post("https://backendfornoforget.herokuapp.com/apis/forgotpassword", this.dataList)
         .then(
             (response) => {
