@@ -54,10 +54,11 @@ import axios from 'axios'
 
                  else{
                      console.log(this.dataList);
+                     console.log(this.dataList.email);
             axios.post("https://backendfornoforget.herokuapp.com/apis/forgotpassword", this.dataList)
         .then(
             (response) => {
-
+                console.log(response);
                 if( response.status === 201) {
                     this.errorMessage = response.data
                 }
