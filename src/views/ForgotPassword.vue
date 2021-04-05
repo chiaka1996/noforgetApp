@@ -54,7 +54,7 @@ import axios from 'axios'
 
                  else{
 
-            axios.post("https://noforgetappbackend.herokuapp.com/apis/forgotpassword", this.dataList)
+            axios.post("https://backendfornoforget.herokuapp.com/apis/forgotpassword", this.dataList)
         .then(
             (response) => {
 

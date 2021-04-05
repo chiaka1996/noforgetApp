@@ -116,7 +116,7 @@ import axios from 'axios'
            email: this.userProfile.email
          }
 
-        axios.post("https://noforgetappbackend.herokuapp.com/apis/getplans", formData)
+        axios.post("https://backendfornoforget.herokuapp.com/apis/getplans", formData)
         .then(
           (response) => {
 
@@ -147,7 +147,7 @@ import axios from 'axios'
         }
         else{
 
-          axios.post("https://noforgetappbackend.herokuapp.com/apis/addplan", formData)
+          axios.post("https://backendfornoforget.herokuapp.com/apis/addplan", formData)
           .then(
             (response) => {
               if (response.status == 201) {
@@ -184,7 +184,7 @@ import axios from 'axios'
         }
         else{
 
-          axios.post("https://noforgetappbackend.herokuapp.com/apis/editplan", data)
+          axios.post("https://backendfornoforget.herokuapp.com/apis/editplan", data)
           .then(
             (response) => {
               if (response.status == 201) {
@@ -210,7 +210,7 @@ import axios from 'axios'
           _id: id
         }
 
-        axios.post("https://noforgetappbackend.herokuapp.com/apis/deleteplan", data)
+        axios.post("https://backendfornoforget.herokuapp.com//apis/deleteplan", data)
         .then(
           (response) => {
             this.errorMessage = response.data
@@ -247,7 +247,7 @@ import axios from 'axios'
           status: !status
         }
 
-        axios.post("https://noforgetappbackend.herokuapp.com/apis/updatestatus", data)
+        axios.post("https://backendfornoforget.herokuapp.com/apis/updatestatus", data)
           .then(
             () => {
               this.$router.go()

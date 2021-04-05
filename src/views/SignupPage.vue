@@ -117,13 +117,13 @@ export default {
       }
 
       if (this.error_message.length < 1) {
-        axios.post('https://noforgetappbackend.herokuapp.com/apis/userProfile', this.signup_details)
+        axios.post('https://backendfornoforget.herokuapp.com/apis/userProfile', this.signup_details)
           .then(
             (response) => {
               if (response.status === 200) {
                 this.login_details.email = email
                 this.login_details.password = password
-                axios.post('https://noforgetappbackend.herokuapp.com/apis/userLogin', this.login_details)
+                axios.post('https://backendfornoforget.herokuapp.com/apis/userLogin', this.login_details)
                   .then(
                     (res) => {
                       this.addUserProfile(res.data)

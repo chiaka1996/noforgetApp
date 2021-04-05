@@ -76,11 +76,9 @@ import axios from 'axios'
               _id: this.userProfile._id
             }
 
-             axios.post("https://noforgetappbackend.herokuapp.com/apis/changepassword", data)
+             axios.post("https://backendfornoforget.herokuapp.com/apis/changepassword", data)
             .then(
                (response) => {
-
-                  console.log(response)
                  const {status, data} = response
 
                  if (status === 201) {

@@ -79,7 +79,7 @@ import axios from 'axios'
 
             }
 
-            axios.post('https://noforgetappbackend.herokuapp.com/apis/updateprofile', details)
+            axios.post('https://backendfornoforget.herokuapp.com/apis/updateprofile', details)
           .then(
             (response) => {
               
